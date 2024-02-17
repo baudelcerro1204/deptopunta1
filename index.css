@@ -1,312 +1,259 @@
-@import "compass/css3";
-
-html, body {
-  margin: 0;
-  padding: 0;
+/* Estilos generales */
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
 }
 
-header {
-  z-index: 1;
-  position: fixed;
-  width: 100%;
-  height: 60px;
-  background: rgba(0, 0, 0, 0.1);
+/* Top background */
+.intro-header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    background: url('https://40.media.tumblr.com/1b916597d3e174399cb7adadddb66ede/tumblr_nt5uk4psl31ud7rr3o1_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 855px;
 }
 
-header a {
-  color: white;
-  float: right;
-  background: rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  padding: 0 30px;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-  font-family: 'Roboto Slab', serif;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
+.bg-overlay {
+    background: rgba(0, 0, 0, 0.3);
+    height: 855px;
 }
 
-#hero1 {
-  background: url(imagenes/barrio.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
 }
 
-#hero2 {
-  background: url(imagenes/edificio.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
+/* Big header */
+.intro-message > h1 {
+    margin-top: -50px;
+    text-shadow: 2px 1px 2px #000;
+    font-size: 5em;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.hero,
-.content {
-  text-align: center;
-  position: relative;
-  width: 100%;
+.intro-divider {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.inner {
-  min-height: 600px;
-  position: relative;
-}
-
-.hero .inner {
-  background: rgba(0, 0, 0, 0.7) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAD0lEQVQIW2NkQABjRmQOAAM+AGkQsDBSAAAAAElFTkSuQmCC) repeat;
-}
-
-.copy {
-  position: absolute;
-  top: 50%;
-  height: 10em;
-  margin-top: -5em;
-  width: 100%;
-}
-
-.hero h1,
-.hero p {
-  color: #fff;
-}
-
-.content h1,
-.content p {
-  color: #333;
-}
-
-h1 {
-  margin: 0;
-  font-family: 'Roboto Slab', serif;
-  font-weight: 400;
-  font-size: 32px;
-  padding: 0 20px;
-}
-
-p {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 14px;
-  padding: 0 20px;
-}
-
-/******* Fonts Import Start **********/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-/********* Fonts Face CSS End **********/
-
-/******* Middle section CSS Start ******/
-/* -------- Landing page ------- */
-.game-section {
-    padding: 60px 50px;
-    margin-top: -250px; /* Ajusta el margen superior para subir las cartas */
-  }
-.game-section .owl-stage {
-  margin: 15px 0;
-  display: flex;
-  display: -webkit-flex;
-}
-/* Ajusta el margen para centrar las cartas */
-.game-section .item {
-  margin: 0 auto 60px auto;
-  width: 320px;
-  height: 400px;
-  display: flex;
-  display: -webkit-flex;
-  align-items: flex-end;
-  -webkit-align-items: flex-end;
-  background: #343434 no-repeat center center / cover;
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  cursor: pointer;
-}
-
-/* Aumenta el valor del ancho activo y ajusta la transformación */
-.game-section .item.active {
-  width: 500px; /* Aumenta el ancho activo para expandir más hacia la derecha */
-  transform: translateX(-30px); /* Ajusta la transformación para centrar */
-  box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-}
-
-/* Aumenta el tamaño y mueve las flechas hacia arriba */
-.game-section .owl-nav {
-  position: absolute;
-  bottom: 20px; /* Ajusta la distancia desde abajo */
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
-/* Aumenta el tamaño de las flechas */
-.game-section .owl-nav button {
-  font-size: 24px; /* Aumenta el tamaño de las flechas */
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  border-radius: 50%;
-  width: 40px; /* Aumenta el ancho de las flechas */
-  height: 40px; /* Aumenta la altura de las flechas */
-  margin: 0 10px; /* Ajusta el espacio entre las flechas */
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-/* Cambia el estilo al pasar el mouse sobre las flechas */
-.game-section .owl-nav button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-
-
-
-.game-section .item:after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-}
-.game-section .item-desc {
-  padding: 0 24px 12px;
-  color: #fff;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  transform: translateY(calc(100% - 54px));
-  -webkit-transform: translateY(calc(100% - 54px));
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-}
-.game-section .item.active .item-desc {
-  transform: none;
-  -webkit-transform: none;
-}
-.game-section .item-desc p {
-  opacity: 0;
-  -webkit-transform: translateY(32px);
-  transform: translateY(32px);
-  transition: all 0.4s ease-in-out 0.2s;
-  -webkit-transition: all 0.4s ease-in-out 0.2s;
-}
-.game-section .item.active .item-desc p {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-.game-section .owl-theme.custom-carousel .owl-dots {
-  margin-top: -20px;
-  position: relative;
-  z-index: 5;
-}
-/******** Middle section CSS End *******/
-
-/***** responsive css Start ******/
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  h2 {
-    margin-bottom: 32px;
-  }
-  h3 {
-    margin: 0 0 8px;
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  /* -------- Landing page ------- */
-  .game-section {
-    padding: 50px 30px;
-  }
-  .game-section .item {
-    margin: 0 12px 60px;
-    width: 260px;
-    height: 360px;
-  }
-  .game-section .item.active {
-    width: 400px;
-  }
-  .game-section .item-desc {
-    transform: translateY(calc(100% - 46px));
-    -webkit-transform: translateY(calc(100% - 46px));
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  h2 {
-    margin-bottom: 32px;
-  }
-  h3 {
-    margin: 0 0 8px;
-    font-size: 24px;
-    line-height: 32px;
-  }
-  .line-title {
-    width: 330px;
-  }
-
-  /* -------- Landing page ------- */
-  .game-section {
-    padding: 50px 30px 40px;
-  }
-  .game-section .item {
-    margin: 0 12px 60px;
-    width: 240px;
-    height: 330px;
-  }
-  .game-section .item.active {
-    width: 360px;
-  }
-  .game-section .item-desc {
-    transform: translateY(calc(100% - 42px));
-    -webkit-transform: translateY(calc(100% - 42px));
-  }
+/* Small header */
+.intro-message > h3 {
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
+    color: black;
 }
 
 @media (max-width: 767px) {
-  body {
-    font-size: 14px;
-  }
-  h2 {
-    margin-bottom: 20px;
-  }
-  h3 {
-    margin: 0 0 8px;
-    font-size: 19px;
-    line-height: 24px;
-  }
-  .line-title {
-    width: 250px;
-  }
+    .intro-message {
+        padding-bottom: 15%;
+    }
 
-  /* -------- Landing page ------- */
-  .game-section {
-    padding: 30px 15px 20px;
-  }
-  .game-section .item {
-    margin: 0 10px 40px;
-    width: 200px;
-    height: 280px;
-  }
-  .game-section .item.active {
-    width: 270px;
-    box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-  }
-  .game-section .item-desc {
-    padding: 0 14px 5px;
-    transform: translateY(calc(100% - 42px));
-    -webkit-transform: translateY(calc(100% - 42px));
-  }
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* Line */
+hr.intro-divider {
+    border: 1px outset rgba(255, 255, 255, 0.2);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    width: 100%;
+}
+
+/* Social buttons */
+.btn {
+    display: inline-block;
+    color: #000;
+    border: 2px outset rgba(0, 0, 0, 0.9);
+    background: #C0C0C0;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 20);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    color: #fff;
+    border: 2px outset rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+    transition: 0.2s;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 20);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+/* Section 2 */
+.content-section-a {
+    padding: 50px 0;
+    background: url('https://68.media.tumblr.com/eb2382a5a4c996cfdab27bc0d1eb51ff/tumblr_nt5umxS1FY1ud7rr3o1_540.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 120vh;
+    margin-top: 0;
+}
+
+.bg-overlay2 {
+    margin-top: -50px;
+    height: 855px;
+}
+
+/* Self-taught */
+.container .link {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.container .link-footer {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.container .link-footer:hover {
+    color: rgba(24, 39, 40, 0.8);
+    font-weight: bold;
+    font-size: 32px;
+}
+
+h2.section-heading {
+    text-shadow: 2px 1px 2px #000;
+    font-size: 5em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Text */
+.content-section-a p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+}
+
+.content-section-a p a {
+    color: silver;
+    font-weight: bold;
+}
+
+/* Profile picture */
+.img-circle {
+    margin-top: 150px;
+    background-color: transparent;
+    border: 2px outset rgba(255, 255, 255, 0.3);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+/* Portfolio section */
+/* Portfolio section */
+#portfolio {
+    display: flex;
+    justify-content: center; /* Centrar las imágenes horizontalmente */
+    align-items: flex-start; /* Alinear las imágenes en la parte superior del contenedor */
+    flex-wrap: wrap;
+    
+}
+.portfolio-img {
+    max-width: 100%; /* Ajusta este valor según sea necesario */
+    max-height: 100%; /* Ajusta este valor según sea necesario */
+    border-radius: 50%; /* Hacerlo circular */
+    object-fit: cover; /* Ajustar el contenido para cubrir el área del contenedor */
+}
+
+.img-container {
+    width: 200px; /* Ajusta este valor según sea necesario */
+    height: 200px; /* Ajusta este valor según sea necesario */
+    background-color: white; /* Fondo blanco */
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Hacerlo circular */
+    overflow: hidden;
+}
+.portfolio-item {
+    width: calc(33.333% - 20px); /* Ajustar el ancho basado en el número de elementos por fila */
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Añadir esta propiedad para incluir el padding en el cálculo del ancho */
+}
+
+.portfolio-link img {
+    width: 100%; /* Hacer que las imágenes llenen el contenedor */
+    height: auto;
+    border-radius: 10%; /* Hacerlo circular */
+}
+
+@media (max-width: 767px) {
+    .portfolio-item {
+        width: calc(50% - 20px); /* Ajustar para pantallas más pequeñas */
+    }
+}
+
+
+@media (max-width: 767px) {
+    .portfolio-item {
+        width: calc(50% - 20px);
+    }
+}
+
+/* Banner */
+.banner {
+    padding: 100px 0;
+    background: url('https://68.media.tumblr.com/ac46aa24b44b5036e9200abb71f810d9/tumblr_nt5vzxV6Us1ud7rr3o1_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 755px;
+}
+
+.bg-overlay4 {
+    margin-top: -100px;
+    padding: 100px 0;
+    background: rgba(255, 255, 255, 0.3);
+    height: 755px;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media (max-width:
+767px) {
+    .banner {
+        padding: 100px 0;
+    }
 }
